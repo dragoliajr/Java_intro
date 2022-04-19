@@ -20,5 +20,10 @@ there's several type of variable
   * \\ = \
 ## Mortgage Method
 Created a mortgage method to showcase what we learned from the video
-    
+
+## FizzBuzz
+an exercise to practice if else statements. 
+if 5 is divisible by a number print Fizz
+if 3 is divisible print Buzz
+If both print FizzBuzz and if neither print just the number
 
