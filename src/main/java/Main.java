@@ -50,42 +50,43 @@ public class Main {
 
             System.out.print("Principal ($1K- $1M): ");
             P = scanner.nextDouble(); //Principal
-            if (P < 1000 || P > 1000000) {
-                System.out.println("please enter a value between $1K - $1M ");
-                continue;
+            if (P >= 1000 && P <= 1000000) {
+
+                break;
             }
-            break;
+            System.out.println("please enter a value between $1K - $1M ");
+            continue;
+
         }
         while(true) {
             System.out.print("Annual Interest Rate: ");
             float AIR = scanner.nextFloat(); //Annual interest rate
-            if (AIR < 0 || AIR > 100) {
-                System.out.println("please enter a value between 1 - 100 ");
-                continue;
-            }
-            else{
+            if (AIR >= 1 && AIR <= 100) {
                 r = (AIR / percent) / Months; //monthly interest rate
                 break;
             }
+
+            System.out.println("please enter a value between 1 - 100 ");
+            continue;
+
 
         }
         while(true){
             System.out.print("period (Years) ");
             int Years = scanner.nextInt();
-            if (Years<0 || Years > 30){
-                System.out.println("please enter a value between 1 - 30 ");
-                continue;
+            if (Years >= 1 && Years <= 30){
+                n = Years * Months; //Monthly payments
+                break;
             }
 
-            n = Years * Months; //Monthly payments
-            break;
+            System.out.println("please enter a value between 1 - 30 ");
+            continue;
         }
         double M = P
                 * (r*Math.pow(1+r,n))
                 / (Math.pow(1+r,n)-1);
         String result = NumberFormat.getCurrencyInstance().format(M);
         System.out.println("Mortgage: " + result);
-
     }
     public static void FizzBuzz() {
         Scanner scanner = new Scanner(System.in);
